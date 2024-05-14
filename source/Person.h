@@ -8,18 +8,36 @@ using namespace std;
 
 class Person {
 public:
+    Person(const string& name, const string& lastName, int age);
+
+    // Setters
+    void SetCasualEmail(string& email);
+    void SetProEmail(string& email);
+    void SetDOB(string& DOB);
+    void SetAge(int age);
+
+    // Getters
+    string getName() const;
+    string getLastName() const;
+    string getDOB() const;
+    string getCasualEmail() const;
+    string getProEmail() const;
+    int getAge() const;
+
+    // Other
+    void HappyBirthday();
+
+
+private:
     const string name;
     const string lastName;
 
-    const string DOB; // DD-MM-YYY
+    string DOB; // DD-MM-YYY
     string casualEmail;
     string proEmail; 
 
     int age;
 
-    Person(const string& name, const string& lastName, int age);
-
-private:
     vector<string> secrets;
 };
 
