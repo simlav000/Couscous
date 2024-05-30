@@ -4,7 +4,6 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include <time.h>
 #include <ctime>
 
 using namespace std;
