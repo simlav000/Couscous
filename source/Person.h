@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <string>
+#include <sstream>
+#include <time.h>
+#include <ctime>
 
 using namespace std;
 
@@ -39,7 +42,7 @@ private:
 
     vector<string> secrets;
 
-    int CalculateAge(string& DOB);
+    int CalculateAge(string DOB);
 };
 
 #endif /* PERSON_H */

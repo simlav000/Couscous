@@ -1,6 +1,4 @@
 #include "Person.h"
-#include <vector>
-#include <string>
 
 using namespace std;
 
@@ -41,9 +39,8 @@ string Person::GetCasualEmail() {
 string Person::GetProEmail() {
     return proEmail;
 }
-int Person::CalculateAge(string& DOB) {
+int Person::CalculateAge(string DOB) {
     // Expected format: YYYY-MM-DD
- /*
     int year, month, day;
     char dash1, dash2;
 
@@ -65,8 +62,6 @@ int Person::CalculateAge(string& DOB) {
     }
 
     return age;
-*/
-    return 10;
 }
 
 
