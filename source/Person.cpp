@@ -7,13 +7,14 @@ using namespace std;
 Person::Person(const string& name, const string& lastName, int age)
     : name(name), lastName(lastName), age(age) {}
 
-Person::Person(const string& name, const string& lastName, string& dob)
-        : name(name), lastName(lastName), dob(dob), age(CalculateAge(dob)) {}
+Person::Person(const string& name, const string& lastName, string DOB)
+        : name(name), lastName(lastName), DOB(DOB), age(CalculateAge(DOB)) {}
 
     
 // Setter implementations
-void Person::SetDOB(string& date) {
-    DOB = date;
+void Person::SetDOB(string date) {
+    // Use move semantics to avoid unnecessary copying
+    DOB = move(date);
 }
 
 void Person::SetCasualEmail(string& email) {
@@ -40,9 +41,9 @@ string Person::GetCasualEmail() {
 string Person::GetProEmail() {
     return proEmail;
 }
-
 int Person::CalculateAge(string& DOB) {
     // Expected format: YYYY-MM-DD
+ /*
     int year, month, day;
     char dash1, dash2;
 
@@ -64,8 +65,9 @@ int Person::CalculateAge(string& DOB) {
     }
 
     return age;
+*/
+    return 10;
 }
-
 
 
 

@@ -10,35 +10,36 @@ class Person {
 public:
     Person(const string& name, const string& lastName, int age);
 
+    Person(const string& name, const string& lastName, string DOB);
+
+    const string name;
+    const string lastName;
+
+    int age;
+
     // Setters
     void SetCasualEmail(string& email);
     void SetProEmail(string& email);
-    void SetDOB(string& DOB);
+    void SetDOB(string DOB);
     void SetAge(int age);
 
     // Getters
-    string getName() const;
-    string getLastName() const;
-    string getDOB() const;
-    string getCasualEmail() const;
-    string getProEmail() const;
-    int getAge() const;
+    string GetDOB();
+    string GetCasualEmail();
+    string GetProEmail();
 
     // Other
     void HappyBirthday();
 
 
 private:
-    const string name;
-    const string lastName;
-
     string DOB; // DD-MM-YYY
     string casualEmail;
     string proEmail; 
 
-    int age;
-
     vector<string> secrets;
+
+    int CalculateAge(string& DOB);
 };
 
 #endif /* PERSON_H */
