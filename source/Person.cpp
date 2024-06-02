@@ -39,6 +39,25 @@ string Person::GetCasualEmail() {
 string Person::GetProEmail() {
     return proEmail;
 }
+
+int Person::Save() {
+    // Assuming executable is in the run/ directory
+    string filename = "Contacts/" + this->name + "_" + this->lastName + ".json";  // idk if json yet
+
+    // Check if file exists
+    if (!filesystem::exists(filename)) {
+        // Create file and close it
+        ofstream outFile(filename);
+        outFile.close();
+    }
+    // Maybe there's a package for this? Seems arduous to implement unless you can simply loop over all the attributes of a class.
+    //Dump(filename);
+
+    return 0;
+}
+
+    // Maybe add a way to make sure there exists only one file with this name
+
 int Person::CalculateAge(string DOB) {
     // Expected format: YYYY-MM-DD
     int year, month, day;
@@ -49,8 +68,8 @@ int Person::CalculateAge(string DOB) {
         return -1;
     }
 
-    std::time_t t = std::time(nullptr);
-    std::tm* now = std::localtime(&t);
+    time_t t = time(nullptr);
+    tm* now = localtime(&t);
 
     int currentYear = now->tm_year + 1900;
     int currentMonth = now->tm_mon + 1;
